@@ -6,11 +6,13 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/20 21:50:35 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/20 23:21:36 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
 int	ft_printf(char const *str, ...)
 {
-	
+	return (ft_strlen(str));
 }

@@ -1,6 +1,6 @@
 # ft_printf
 
-## Folder Structure3
+## Folder Structure
 - /include: header files
 - /src: C files
 - /build: used by Makefile for objects
