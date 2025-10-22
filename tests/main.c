@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/22 22:14:05 by dde-fite         ###   ########.fr       */
+/*   Created: 2025/10/22 15:22:39 by dde-fite          #+#    #+#             */
+/*   Updated: 2025/10/22 18:26:43 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft.h"
-
-typedef struct s_flags
+int	main(void)
 {
-	int	space;
-	int	zero;
-}	t_flags;
-
-int	ft_printf(char const *str, ...);
-
-#endif
+	ft_printf("Hola buenos dias%%\nesto es una a: %c", 'a');
+}

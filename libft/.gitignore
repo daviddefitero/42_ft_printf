@@ -1,0 +1,7 @@
+.vscode/
+.python-version
+**.out
+**.h.gch
+**.a
+**.o
+tests

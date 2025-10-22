@@ -6,13 +6,12 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 23:49:23 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/18 16:20:50 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:54:57 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// TODO Revisar errores en algunos casos
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	const size_t		dst_len = ft_strlen(dst);
