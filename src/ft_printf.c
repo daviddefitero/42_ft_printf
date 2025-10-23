@@ -6,13 +6,13 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/22 22:28:36 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:38:00 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	write_data(char chr, char *flags, va_list *args)
+static void	write_data(char chr, t_flags *flags, va_list *args)
 {
 	if (chr == 'c')
 		ft_putchar_fd(*va_arg(*args, char *), 1);
@@ -23,27 +23,26 @@ static t_flags	get_flags(char **str)
 	t_flags		*flgs;
 	char const	*_str = *str;
 
-	while (**str)
+	while (*_str)
 	{
-		while (**str && ft_isspace(**str))
-		{
-			flgs->space++;
-			*str++;
-		}
 		if (ft_isdigit(**str))
 		{
-			if (**str == '0')
+			if (*_str == '0')
 			{
-				flgs->zero = 1;
+				flgs->zeroes = 1;
 				*str++;
 			}
-			_str = *str
-			while (ft_isdigit(**str))
-			{
-				
-			}
+			flgs->width = ft_atoi(str);
+		}
+		if (*_str)
+		{
+			/* code */
 		}
 	}
+	if (ft_isspace(_str - 1))
+		flgs->sign = ' ';
+	else if (_str - 1 == '+')
+		flgs->sign = '+';
 }
 
 int	ft_printf(char const *str, ...)

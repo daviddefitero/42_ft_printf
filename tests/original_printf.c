@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   original_printf.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 15:22:39 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/23 22:42:15 by dde-fite         ###   ########.fr       */
+/*   Created: 2025/10/23 22:42:26 by dde-fite          #+#    #+#             */
+/*   Updated: 2025/10/23 22:43:36 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	ft_printf("Hola buenos dias%%\nesto es una a: %c", 'a');
+	printf("----------ORIGINAL PRINTF----------")
 }

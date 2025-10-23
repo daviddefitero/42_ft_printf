@@ -3,6 +3,7 @@
 		".env*": "dotenv",
 		"ft_printf.h": "c",
 		"stdarg.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"sstream": "c"
 	}
 }
