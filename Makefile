@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/22 17:32:45 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/24 20:14:34 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ TOTAL			:= $(words $(SRC))
 
 # GCC COMPILER
 CC				= cc
-CFLAGS			= -g -Wall -Werror -Wextra -c -I$(INCLUDE_FOLDER) -I${LIBFT_FOLDER}
+# Delete -g
+CFLAGS			= -fdiagnostics-color=always -g -Wall -Werror -Wextra -c -I$(INCLUDE_FOLDER) -I${LIBFT_FOLDER}
 
 # AR LIBRARY
 AR				= ar
