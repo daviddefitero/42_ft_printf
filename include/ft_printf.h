@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/24 20:35:10 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:42:11 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ int			ft_printf(char const *str, ...);
 const char	*get_flags(t_modifiers *mods, const char *str);
 const char	*get_width(t_modifiers *mods, const char *str);
 const char	*get_precision(t_modifiers *mods, const char *str);
+int			fill_width_start(void *content, char type, t_modifiers mods);
+int			fill_width_end(int chrs_count, t_modifiers mods);
+int			write_data(const char *str, t_modifiers mods, va_list *args_ptr);
+int			write_data_hash_notation(const char *str, t_modifiers mods,
+				va_list *args_ptr);
 
 #endif
