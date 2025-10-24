@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/24 20:14:34 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/24 20:32:24 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SHELL := /bin/bash
 
 # FILES
 NAME			= libftprintf.a
-SRC_FILES		= ft_printf.c
+SRC_FILES		= ft_printf.c getters.c
 SRC_FOLDER		= src
 INCLUDE_FOLDER	= include
 BUILD_FOLDER	= build
