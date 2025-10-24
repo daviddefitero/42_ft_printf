@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:28:49 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/24 20:35:15 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:12:13 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ const char	*get_width(t_modifiers *mods, const char *str)
 {
 	if (*str && *str == '0')
 	{
-		mods->width = 1;
+		mods->zero = 1;
 		str++;
 	}
 	else
