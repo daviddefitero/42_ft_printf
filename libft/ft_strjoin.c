@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 00:12:04 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/12 01:04:29 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/24 20:47:31 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	const size_t	len = s1_len + ft_strlen(s2);
 	char			*str;
 
-	str = malloc(len + 1 * sizeof(char));
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1, s1_len + 1);

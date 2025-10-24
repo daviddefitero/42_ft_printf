@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 21:28:04 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/18 16:21:12 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/24 20:55:23 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /* ****************************** MY FUNCTIONS ****************************** */
 
 // ft_isspace
+// Returns true if the character is within the range of spaces.
 int		ft_isspace(int c);
 
 // ft_minnbr
@@ -188,7 +189,13 @@ size_t	ft_minsize(size_t n1, size_t n2);
 // ft_maxsize
 size_t	ft_maxsize(size_t n1, size_t n2);
 
+// ft_nbrlen
+// Measures the digits of a long int
+int		ft_nbrlen(long nbr);
+
 // ft_strndup
+// Allocates and stores a string with the desired length.
+// There is no need to take into account the space for the \0.
 char	*ft_strndup(const char *s, size_t len);
 
 #endif

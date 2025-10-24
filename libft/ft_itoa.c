@@ -6,31 +6,11 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 15:44:24 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/11 20:19:40 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/24 20:55:47 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_nbrlen(long nbr)
-{
-	int		len;
-
-	len = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
-	{
-		nbr = -nbr;
-		len++;
-	}
-	while (nbr > 0)
-	{
-		nbr /= 10;
-		len++;
-	}
-	return (len);
-}
 
 char	*ft_itoa(int n)
 {
