@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 22:34:41 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/24 23:12:25 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/25 00:49:28 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	fill_width_end(int chrs_count, t_modifiers *mods)
 
 	to_fill = mods->width - chrs_count;
 	_w = 0;
-	while (to_fill >= _w)
+	while (to_fill > _w)
 	{
 		if (!mods->zero)
 			ft_putchar_fd(' ', 1);
