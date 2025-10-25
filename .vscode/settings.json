@@ -65,6 +65,7 @@
 		"typeinfo": "c",
 		"utility": "c",
 		"valarray": "c",
-		"variant": "c"
+		"variant": "c",
+		"stdlib.h": "c"
 	}
 }
