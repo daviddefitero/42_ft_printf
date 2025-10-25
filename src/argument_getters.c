@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:28:49 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/24 22:12:13 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/25 21:02:57 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ const char	*get_width(t_modifiers *mods, const char *str)
 const char	*get_precision(t_modifiers *mods, const char *str)
 {
 	if (*str && *str != '.')
+	{
+		mods->precision = 0;
 		return (str);
+	}
 	str++;
 	mods->precision = ft_atoi(str);
 	while (*str && ft_isdigit(*str))
