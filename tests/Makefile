@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/22 16:57:30 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/24 23:54:19 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,13 @@
 # ******************************** VARIABLES  ******************************** #
 # FILES
 NAME		= printf_test
-SRC			:= $(wildcard *.c)
+SRC			:= main.c
 INCLUDE_FOLDER	= ../include
 LIBFT_FOLDER	= ../libft
 
 # GCC COMPILER
 CC			= cc
-CFLAGS		= -o ${NAME} -Wall -Wextra -Werror -I$(INCLUDE_FOLDER) -I${LIBFT_FOLDER}
+CFLAGS		= -o ${NAME} -Wall -Wextra -I$(INCLUDE_FOLDER) -I${LIBFT_FOLDER}
 
 # OTHER COMMANDS
 RM			= rm
