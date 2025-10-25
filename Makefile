@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/25 23:48:20 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/26 00:02:04 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SHELL := /bin/bash
 
 # FILES
 NAME			= libftprintf.a
-SRC_FILES		= ft_printf.c argument_getters.c write.c width_management.c integer_conversion.c
+SRC_FILES		= ft_printf.c argument_getters.c interruption_writers.c printing_helpers.c integer_conversion.c
 SRC_FOLDER		= src
 INCLUDE_FOLDER	= include
 BUILD_FOLDER	= build
