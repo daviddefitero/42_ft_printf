@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/26 21:13:21 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/26 21:17:42 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC_FILES		:= core/ft_printf.c core/argument_getters.c core/interruption_writers
 SRC_FOLDER		= src
 INCLUDE_FOLDER	= include
 BUILD_FOLDER	= build
-LIBFT_FOLDER	= lib/libft
+LIBFT_FOLDER	= libft
 SRC				:= $(addprefix $(SRC_FOLDER)/, $(SRC_FILES))
 OBJ				:= $(patsubst $(SRC_FOLDER)/%.c,$(BUILD_FOLDER)/%.o,$(SRC))
 TOTAL			:= $(words $(SRC))
