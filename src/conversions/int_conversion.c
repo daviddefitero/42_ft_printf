@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   integer_conversion.c                               :+:      :+:    :+:   */
+/*   int_conversion.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/25 23:43:47 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/26 21:06:08 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ static void	print_number(int nbr, bool int_min_overflow)
 		ft_putnbr_fd(nbr, 1);
 }
 
-int	write_int(t_modifiers *mods, va_list *args_ptr)
+int	write_int(int nbr, t_modifiers *mods)
 {
-	int				nbr;
 	char			sign;
 	int				paddng;
 	int				precsn;
@@ -57,7 +56,6 @@ int	write_int(t_modifiers *mods, va_list *args_ptr)
 	if (mods->precision)
 		mods->zero = 0;
 	int_min_overflow = false;
-	nbr = va_arg(*args_ptr, int);
 	sign = manage_sign(&nbr, mods, &int_min_overflow);
 	precsn = ft_maxnbr(0, mods->precision - ft_nbrlen(nbr));
 	paddng = ft_maxnbr(0, mods->width - (ft_nbrlen(nbr) + (bool)sign + precsn));

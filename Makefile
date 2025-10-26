@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/26 20:02:00 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/26 21:01:57 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,14 @@ SHELL := /bin/bash
 # FILES
 NAME			= libftprintf.a
 SRC_FILES		:= ft_printf.c argument_getters.c interruption_writers.c \
-				printing_helpers.c integer_conversion.c char_conversion.c
+				printing_helpers.c conversions/int_conversion.c \
+				conversions/char_conversion.c
 SRC_FOLDER		= src
 INCLUDE_FOLDER	= include
 BUILD_FOLDER	= build
 LIBFT_FOLDER	= libft
 SRC				:= $(addprefix $(SRC_FOLDER)/, $(SRC_FILES))
-OBJ				:= $(addprefix $(BUILD_FOLDER)/,$(patsubst %.c,%.o,$(SRC_FILES)))
+OBJ				:= $(patsubst $(SRC_FOLDER)/%.c,$(BUILD_FOLDER)/%.o,$(SRC))
 TOTAL			:= $(words $(SRC))
 
 # GCC COMPILER
@@ -70,6 +71,7 @@ ${NAME}: ${SRC} ${LIBFT_FOLDER}/libft.a
 	@echo "                                                 by dde-fite                                                  "
 	@echo -e "${RESET}Creating build folder if does not exist ...\n"
 	@${MKDIR} -p ${BUILD_FOLDER}
+	@${MKDIR} -p ${dir $(OBJ)}
 	@echo -e "Compiling ft_printf files ...\n${YELLOW}"
 	@count=0; \
 	for file in ${SRC_FILES}; do \
