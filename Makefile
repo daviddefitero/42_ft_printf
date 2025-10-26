@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/26 21:01:57 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/10/26 21:13:21 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,13 @@ SHELL := /bin/bash
 
 # FILES
 NAME			= libftprintf.a
-SRC_FILES		:= ft_printf.c argument_getters.c interruption_writers.c \
-				printing_helpers.c conversions/int_conversion.c \
-				conversions/char_conversion.c
+SRC_FILES		:= core/ft_printf.c core/argument_getters.c core/interruption_writers.c \
+				utils/printing_helpers.c utils/variadic_getter.c \
+				conversions/int_conversion.c conversions/char_conversion.c
 SRC_FOLDER		= src
 INCLUDE_FOLDER	= include
 BUILD_FOLDER	= build
-LIBFT_FOLDER	= libft
+LIBFT_FOLDER	= lib/libft
 SRC				:= $(addprefix $(SRC_FOLDER)/, $(SRC_FILES))
 OBJ				:= $(patsubst $(SRC_FOLDER)/%.c,$(BUILD_FOLDER)/%.o,$(SRC))
 TOTAL			:= $(words $(SRC))
