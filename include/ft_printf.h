@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 00:00:33 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/26 20:00:03 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ const char	*get_precision(t_modifiers *mods, const char *str);
 int			write_switch(const char *str, t_modifiers *mods, va_list *args_ptr);
 int			write_switch_hash_notation(const char *str, t_modifiers *mods,
 				va_list *args_ptr);
+int			write_char(t_modifiers *mods, va_list *args_ptr);
 int			write_int(t_modifiers *mods, va_list *args_ptr);
 
 /* **************************** PRINTING HELPERS **************************** */
