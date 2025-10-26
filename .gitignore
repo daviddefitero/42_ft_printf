@@ -3,3 +3,4 @@ build/
 *.a
 *.out
 tests/printf_test
+.python-version

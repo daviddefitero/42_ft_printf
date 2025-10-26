@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 22:42:26 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 19:12:11 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/26 23:22:25 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	main(void)
 	// printf("Character: %c\n", 'a');
 
 	//printf("Number %%d: %-030.5f\n", 5064.0);
-	printf("Char: % -10c", 'a');
+	printf("UInt: % u", 2044545);
 }
