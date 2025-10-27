@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getters.c                                          :+:      :+:    :+:   */
+/*   argument_getters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:28:49 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/25 21:02:57 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:24:11 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 const char	*get_flags(t_modifiers *mods, const char *str)
 {
-	mods->blank = 0;
-	mods->plus = 0;
-	mods->minus = 0;
+	mods->blank = false;
+	mods->plus = false;
+	mods->minus = false;
 	while (*str && (*str == ' ' || *str == '+' || *str == '-'))
 	{
 		if (*str == ' ')
-			mods->blank = 1;
+			mods->blank = true;
 		if (*str == '+')
-			mods->plus = 1;
+			mods->plus = true;
 		if (*str == '-')
-			mods->minus = 1;
+			mods->minus = true;
 		str++;
 	}
 	return (str);
@@ -34,11 +34,11 @@ const char	*get_width(t_modifiers *mods, const char *str)
 {
 	if (*str && *str == '0')
 	{
-		mods->zero = 1;
+		mods->zero = true;
 		str++;
 	}
 	else
-		mods->zero = 0;
+		mods->zero = false;
 	mods->width = ft_atoi(str);
 	while (*str && ft_isdigit(*str))
 		str++;
@@ -49,7 +49,7 @@ const char	*get_precision(t_modifiers *mods, const char *str)
 {
 	if (*str && *str != '.')
 	{
-		mods->precision = 0;
+		mods->precision = false;
 		return (str);
 	}
 	str++;
