@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 23:33:43 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:03:10 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int	interruption_event(const char **str, va_list *args_ptr)
 	_str = get_flags(&mods, _str);
 	_str = get_width(&mods, _str);
 	_str = get_precision(&mods, _str);
+	if (mods.precision || mods.minus)
+		mods.zero = 0;
 	chrs_count = write_switch(_str++, &mods, args_ptr);
 	*str = _str;
 	return (chrs_count);

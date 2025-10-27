@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 21:06:08 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/27 20:03:28 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int	write_int(int nbr, t_modifiers *mods)
 	int				precsn;
 	bool			int_min_overflow;
 
-	if (mods->precision)
-		mods->zero = 0;
 	int_min_overflow = false;
 	sign = manage_sign(&nbr, mods, &int_min_overflow);
 	precsn = ft_maxnbr(0, mods->precision - ft_nbrlen(nbr));
