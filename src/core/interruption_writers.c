@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 22:36:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 23:27:05 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/28 19:17:15 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	write_switch(const char *str, t_modifiers *mods, va_list *args_ptr)
 	else if (*str == 'c')
 		return (write_char(get_char(args_ptr), mods));
 	else if (*str == 's')
-		ft_putstr_fd(va_arg(*args_ptr, char *), 1);
+		return (write_str(get_str(args_ptr), mods));
 	return (-1);
 }
 
