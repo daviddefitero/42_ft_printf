@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_conversion.c                                   :+:      :+:    :+:   */
+/*   hex_conversion.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 00:10:21 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:12:50 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	put_nbr_overflw(int nbr)
+static void	print_hex(unsigned int nbr)
 {
-	ft_putnbr_fd(-(nbr / 10), 1);
-	ft_putnbr_fd(-(nbr % 10), 1);
+	char const	*hex = "0123456789abcdef";
+
+	if (nbr > 0)
+	{
+		print_hex(nbr / 16);
+		ft_putchar_fd(hex[nbr % 16], 1);
+	}
 }
 
-int	write_int(int nbr, t_modifiers *mods)
+int	write_hex(int nbr, t_modifiers *mods)
 {
 	char			sign;
 	unsigned int	u_nbr;
@@ -38,10 +43,7 @@ int	write_int(int nbr, t_modifiers *mods)
 		ft_putchar_fd(sign, 1);
 	if (mods->precision)
 		fill_char('0', precsn);
-	if (nbr == INT_MIN)
-		put_nbr_overflw(nbr);
-	else
-		ft_putnbr_fd(u_nbr, 1);
+	print_hex(nbr);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
 	return (nbr_len + (bool)sign + paddng + precsn);
