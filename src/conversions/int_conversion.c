@@ -6,57 +6,46 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/27 20:19:51 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/28 23:40:45 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	manage_sign(int *nbr, t_modifiers *mods, bool *int_min_overflow)
+static char	manage_sign(int nbr, unsigned int *u_nbr, t_modifiers *mods)
 {
-	if (*nbr >= 0)
+	if (nbr >= 0)
 	{
+		*u_nbr = (unsigned int)nbr;
 		if (mods->plus)
 			return ('+');
 		else if (mods->blank)
 			return (' ');
 	}
-	else if (mods->width || mods->precision)
+	else
 	{
-		if (*nbr == INT_MIN)
-		{
-			*nbr = -(*nbr + 1);
-			*int_min_overflow = true;
-		}
-		else
-			*nbr = -*nbr;
+		*u_nbr = (unsigned int)(-(long)nbr);
 		return ('-');
 	}
 	return (0);
 }
 
-static void	print_number(int nbr, bool int_min_overflow)
+static void	put_nbr_overflw(int nbr)
 {
-	if (int_min_overflow)
-	{
-		ft_putnbr_fd(nbr / 10, 1);
-		ft_putnbr_fd(nbr % 10 + 1, 1);
-	}
-	else
-		ft_putnbr_fd(nbr, 1);
+	ft_putnbr_fd(-(nbr / 10), 1);
+	ft_putnbr_fd(-(nbr % 10), 1);
 }
 
 int	write_int(int nbr, t_modifiers *mods)
 {
 	char			sign;
+	unsigned int	u_nbr;
 	int				nbr_len;
 	int				paddng;
 	int				precsn;
-	bool			int_min_overflow;
 
-	int_min_overflow = false;
-	sign = manage_sign(&nbr, mods, &int_min_overflow);
-	nbr_len = ft_nbrlen(nbr);
+	sign = manage_sign(nbr, &u_nbr, mods);
+	nbr_len = ft_nbrlen(u_nbr);
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
 	paddng = ft_maxnbr(0, mods->width - (nbr_len + (bool)sign + precsn));
 	if (mods->zero && sign)
@@ -67,8 +56,11 @@ int	write_int(int nbr, t_modifiers *mods)
 		ft_putchar_fd(sign, 1);
 	if (mods->precision)
 		fill_char('0', precsn);
-	print_number(nbr, int_min_overflow);
+	if (nbr == INT_MIN)
+		put_nbr_overflw(nbr);
+	else
+		ft_putnbr_fd(u_nbr, 1);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
-	return (ft_nbrlen(nbr) + (bool)sign + paddng + precsn);
+	return (nbr_len + (bool)sign + paddng + precsn);
 }
