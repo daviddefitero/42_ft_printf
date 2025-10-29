@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:22:39 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/26 23:37:23 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/29 01:14:30 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 
 int	main(void)
 {
-	int	ret_std;
-	int	ret_ft;
+	char const	a[] = "Hello good morning, have a nice day!";
+	int			ret_std;
+	int			ret_ft;
 	// printf("=== Casos básicos ===\n");
 	// ret_std = printf("1. %d\n", 42);
 	// ret_ft = ft_printf("1. %d\n", 42);
@@ -69,7 +70,26 @@ int	main(void)
 	// ft_printf("Letter d w/ width 10 and +: %+10c\n", 'd');
 	// ft_printf("Letter e w/ width 10, - and (blank): % -10c\n", 'e');
 	// ft_printf("Letter f w/ width 10, -, + and precision: % -10.22c\n", 'f');
-	ft_printf("UInt Max: %u\n", (unsigned int)UINT_MAX);
-	ft_printf("UInt Max: %u\n", 0);
+	// ft_printf("UInt Max: %u\n", (unsigned int)UINT_MAX);
+	// ft_printf("UInt Max: %u\n", 0);
+	// ft_printf("Test 1: %+50s\n", a);
+	// ft_printf("Test 2: %-50.10s\n", a);
+	// ft_printf("Test 3: %5.500s\n", a);
+	// ft_printf("%+20.10x\n", 53463446);
+	// ft_printf("%+20.10X\n", 53463446);
+	printf("Test printf (&a):		%p\n", &a);
+	ft_printf("Test ft_printf (&a):		%p\n\n", &a);
+	printf("Test printf (&ret_std):		%p\n", &ret_std);
+	ft_printf("Test ft_printf (&ret_std):	%p\n\n", &ret_std);
+	printf("Test printf (&ret_ft):		%p\n", &ret_ft);
+	ft_printf("Test ft_printf (&ret_ft):	%p\n\n", &ret_ft);
+	printf("Test printf (LONG_MIN):		%p\n", LONG_MIN);
+	ft_printf("Test ft_printf (LONG_MIN):	%p\n\n", LONG_MIN);
+	printf("Test printf (LONG_MAX):		%p\n", LONG_MAX);
+	ft_printf("Test ft_printf (LONG_MAX):	%p\n\n", LONG_MAX);
+	printf("Test printf (ULONG_MAX):	%p\n", ULONG_MAX);
+	ft_printf("Test ft_printf (ULONG_MAX):	%p\n\n", ULONG_MAX);
+	printf("Test printf (-1):		%p\n", -1);
+	ft_printf("Test ft_printf (-1):		%p\n\n", -1);
 	return (0);
 }

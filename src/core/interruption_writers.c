@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 22:36:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 00:23:37 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:56:14 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int	write_switch(const char *str, t_modifiers *mods, va_list *args_ptr)
 		return (write_hex(get_int(args_ptr), mods, false));
 	else if (*str == 'X')
 		return (write_hex(get_int(args_ptr), mods, true));
-	return (-1);
+	else if (*str == 'p')
+		return (write_ptr(get_ptr(args_ptr), mods));
+	return (0);
 }
 
 int	write_switch_hash_notation(const char *str, t_modifiers *mods,
