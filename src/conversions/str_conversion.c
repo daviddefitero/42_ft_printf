@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/28 19:14:19 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/29 01:32:58 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,28 @@ static void	putstrn(char *s, size_t len)
 		write(1, s++, 1);
 }
 
+static int	null_management(t_modifiers *mods)
+{
+	int	paddng;
+
+	paddng = ft_maxnbr(0, mods->width - ft_strlen("(null)"));
+	if (!mods->minus)
+		fill_width(paddng, mods->zero);
+	ft_putstr_fd("(null)", 1);
+	if (mods->minus)
+		fill_width(paddng, mods->zero);
+	return (ft_strlen("(null)") + paddng);
+}
+
 int	write_str(char *str, t_modifiers *mods)
 {
-	size_t const	str_len = ft_strlen(str);
+	size_t			str_len;
 	size_t			out_str_len;
 	int				paddng;
 
+	if (!str)
+		return (null_management(mods));
+	str_len = ft_strlen(str);
 	if (mods->precision)
 		out_str_len = ft_minnbr(str_len, mods->precision);
 	else
