@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 00:53:55 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:41:09 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ static void	print_hex(unsigned int nbr, bool uppercase)
 	}
 }
 
+static void	print_prefix(bool uppercase)
+{
+	if (uppercase)
+		ft_putstr_fd("0X", 1);
+	else
+		ft_putstr_fd("0x", 1);
+}
+
+static int	sum_prefix(unsigned int nbr, t_modifiers *mods)
+{
+	if (mods->hash && nbr != 0)
+		return (2);
+	else
+		return (0);
+}
+
 int	write_hex(int nbr, t_modifiers *mods, bool uppercase)
 {
 	char			sign;
@@ -50,13 +66,16 @@ int	write_hex(int nbr, t_modifiers *mods, bool uppercase)
 	sign = manage_sign(nbr, &u_nbr, mods);
 	nbr_len = len_hex(u_nbr);
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
-	paddng = ft_maxnbr(0, mods->width - (nbr_len + (bool)sign + precsn));
+	paddng = ft_maxnbr(0, mods->width - (nbr_len + (bool)sign + precsn
+				+ sum_prefix(u_nbr, mods)));
 	if (mods->zero && sign)
 		ft_putchar_fd(sign, 1);
 	if (!mods->minus)
 		fill_width(paddng, mods->zero);
 	if (!mods->zero && sign)
 		ft_putchar_fd(sign, 1);
+	if (mods->hash && nbr != 0)
+		print_prefix(uppercase);
 	if (mods->precision)
 		fill_char('0', precsn);
 	print_hex(nbr, uppercase);

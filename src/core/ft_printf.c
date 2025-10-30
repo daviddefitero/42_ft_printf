@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 13:06:14 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:41:47 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,22 @@
 static int	interruption_event(const char **str, va_list *args_ptr)
 {
 	t_modifiers	mods;
-	const char	*_str = *str;
-	int			chrs_count;
 
-	if (!*_str)
+	if (!**str)
 		return (0);
-	_str++;
-	if (*_str == '%')
+	(*str)++;
+	if (**str == '%')
 	{
 		ft_putchar_fd('%', 1);
 		*str += 2;
 		return (1);
 	}
-	_str = get_flags(&mods, _str);
-	_str = get_width(&mods, _str);
-	_str = get_precision(&mods, _str, args_ptr);
-	if (mods.precision || mods.minus)
+	*str = get_flags(&mods, *str);
+	*str = get_width(&mods, *str);
+	*str = get_precision(&mods, *str, args_ptr);
+	if (mods.is_precision || mods.minus)
 		mods.zero = 0;
-	chrs_count = write_switch(_str++, &mods, args_ptr);
-	*str = _str;
-	return (chrs_count);
+	return (write_switch((*str)++, &mods, args_ptr));
 }
 
 int	ft_printf(char const *str, ...)
