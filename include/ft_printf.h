@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 00:56:46 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/30 13:06:26 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int				ft_printf(char const *str, ...);
 /* **************************** ARGUMENT GETTERS **************************** */
 const char		*get_flags(t_modifiers *mods, const char *str);
 const char		*get_width(t_modifiers *mods, const char *str);
-const char		*get_precision(t_modifiers *mods, const char *str);
+const char		*get_precision(t_modifiers *mods, const char *str,
+					va_list *args_ptr);
 
 /* ************************** INTERRUPRION WRITERS ************************** */
 int				write_switch(const char *str, t_modifiers *mods,
