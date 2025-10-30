@@ -6,13 +6,13 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:22:39 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 17:42:15 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	main(void)
 {
@@ -93,5 +93,27 @@ int	main(void)
 	// ft_printf("Test ft_printf (-1):		%p\n\n", -1);
 	// printf("%#20.10x\n", 5345);
 	// ft_printf("%#20.10x\n", 5345);
+	// ft_printf(" %s \n", "-");
+	// ft_printf(" %s %s \n", "", "-");
+	// ft_printf(" %s %s \n", " - ", "");
+	// ft_printf(" %s %s %s %s\n", " - ", "", "4", "");
+	// ft_printf(" %s %s %s %s %s \n", " - ", "", "4", "", "2 ");
+	// ft_printf(" NULL %s NULL \n", NULL);
+	printf("Orig: %p \n", -1);
+	ft_printf("Mine: %p \n", -1);
+	printf("Orig: %p \n", 1);
+	ft_printf("Mine: %p \n", 1);
+	printf("Orig: %p \n", 15);
+	ft_printf("Mine: %p \n", 15);
+	printf("Orig: %p \n", 16);
+	ft_printf("Mine: %p \n", 16);
+	printf("Orig: %p \n", 17);
+	ft_printf("Mine: %p \n", 17);
+	printf("Orig: %p %p \n", LONG_MIN, LONG_MAX);
+	ft_printf("Mine: %p %p \n", LONG_MIN, LONG_MAX);
+	printf("Orig: %p %p \n", INT_MIN, INT_MAX);
+	ft_printf("Mine: %p %p \n", INT_MIN, INT_MAX);
+	printf("Orig: %p %p \n", ULONG_MAX, -ULONG_MAX);
+	ft_printf("Mine: %p %p \n", ULONG_MAX, -ULONG_MAX);
 	return (0);
 }

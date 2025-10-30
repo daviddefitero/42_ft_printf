@@ -6,11 +6,11 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:28:49 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 16:45:37 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 const char	*get_flags(t_modifiers *mods, const char *str)
 {

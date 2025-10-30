@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_helpers.c                                   :+:      :+:    :+:   */
+/*   char_conversion.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 00:08:50 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 00:12:40 by dde-fite         ###   ########.fr       */
+/*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
+/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-// Takes a signed number and copies it to an unsigned int, then returns the sign
-// that should be displayed.
-char	manage_sign(int nbr, unsigned int *u_nbr, t_modifiers *mods)
+int	write_char(char c, t_modifiers *mods)
 {
-	if (nbr >= 0)
-	{
-		*u_nbr = (unsigned int)nbr;
-		if (mods->plus)
-			return ('+');
-		else if (mods->blank)
-			return (' ');
-	}
-	else
-	{
-		*u_nbr = (unsigned int)(-(long)nbr);
-		return ('-');
-	}
-	return (0);
+	int				paddng;
+
+	paddng = ft_maxnbr(0, mods->width - 1);
+	if (!mods->minus)
+		fill_width(paddng, false);
+	ft_putchar_fd(c, 1);
+	if (mods->minus)
+		fill_width(paddng, false);
+	return (paddng + 1);
 }
