@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_conversion.c                                   :+:      :+:    :+:   */
+/*   str_conversion_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 20:23:06 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	write_str(char *str, t_modifiers *mods)
 	size_t			out_str_len;
 	int				paddng;
 
-	if (!*str)
+	if (!str)
 		return (null_management(mods));
 	str_len = ft_strlen(str);
 	if (mods->is_precision)
