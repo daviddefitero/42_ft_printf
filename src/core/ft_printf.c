@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:31:32 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:48:02 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	interruption_event(const char **str, va_list *args_ptr)
 	if (**str == '%')
 	{
 		ft_putchar_fd('%', 1);
-		*str += 2;
+		*str += 1;
 		return (1);
 	}
 	return (write_switch((*str)++, args_ptr));

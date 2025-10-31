@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:15:55 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:34:24 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,5 @@ unsigned int	get_uint(va_list *args_ptr);
 char			get_char(va_list *args_ptr);
 char			*get_str(va_list *args_ptr);
 void			*get_ptr(va_list *args_ptr);
-
-/* ********************************  UTILS ********************************* */
-char			manage_sign(int nbr, unsigned int *u_nbr);
 
 #endif

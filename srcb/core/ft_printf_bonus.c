@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:48:54 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	interruption_event(const char **str, va_list *args_ptr)
 	if (**str == '%')
 	{
 		ft_putchar_fd('%', 1);
-		*str += 2;
+		*str += 1;
 		return (1);
 	}
 	*str = get_flags(&mods, *str);

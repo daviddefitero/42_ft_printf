@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:30:53 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:31:53 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ static void	print_hex(unsigned int nbr, bool uppercase)
 
 int	write_hex(int nbr, bool uppercase)
 {
+	if (nbr == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
 	print_hex(nbr, uppercase);
 	return (len_hex(nbr));
 }
