@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_conversion.c                                   :+:      :+:    :+:   */
+/*   number_helpers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:30:36 by dde-fite         ###   ########.fr       */
+/*   Created: 2025/10/29 00:08:50 by dde-fite          #+#    #+#             */
+/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	write_str(char *str)
+// Takes a signed number and copies it to an unsigned int, then returns the sign
+// that should be displayed.
+char	manage_sign(int nbr, unsigned int *u_nbr, t_modifiers *mods)
 {
-	if (!*str)
+	if (nbr >= 0)
 	{
-		ft_putstr_fd("(null)", 1);
-		return (ft_strlen("(null)"));
+		*u_nbr = (unsigned int)nbr;
+		if (mods->plus)
+			return ('+');
+		else if (mods->blank)
+			return (' ');
 	}
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
+	else
+	{
+		*u_nbr = (unsigned int)(-(long)nbr);
+		return ('-');
+	}
+	return (0);
 }

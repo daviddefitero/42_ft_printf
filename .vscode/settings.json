@@ -66,6 +66,8 @@
 		"utility": "c",
 		"valarray": "c",
 		"variant": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"stdio.h": "c",
+		"ft_printf_bonus.h": "c"
 	}
 }

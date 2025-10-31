@@ -6,19 +6,19 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:22:39 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/29 17:45:32 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 20:16:03 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	main(void)
 {
 	// char const	a[] = "Hello good morning, have a nice day!";
-	int			ret_std;
-	int			ret_ft;
+	// int			ret_std;
+	// int			ret_ft;
 	// printf("=== Casos básicos ===\n");
 	// ret_std = printf("1. %d\n", 42);
 	// ret_ft = ft_printf("1. %d\n", 42);
@@ -77,8 +77,8 @@ int	main(void)
 	// ft_printf("Test 3: %5.500s\n", test);
 	// ft_printf("%+20.10x\n", 53463446);
 	// ft_printf("%+20.10X\n", 53463446);
-	// printf("Test printf (&test):		%p\n", &test);
-	// ft_printf("Test ft_printf (&test):		%p\n\n", &test);
+	// printf("Test printf (&a):		%p\n", &a);
+	// ft_printf("Test ft_printf (&a):		%p\n\n", &a);
 	// printf("Test printf (&ret_std):		%p\n", &ret_std);
 	// ft_printf("Test ft_printf (&ret_std):	%p\n\n", &ret_std);
 	// printf("Test printf (&ret_ft):		%p\n", &ret_ft);
@@ -91,34 +91,29 @@ int	main(void)
 	// ft_printf("Test ft_printf (ULONG_MAX):	%p\n\n", ULONG_MAX);
 	// printf("Test printf (-1):		%p\n", -1);
 	// ft_printf("Test ft_printf (-1):		%p\n\n", -1);
-	// int a = 42;
-	// int b = 1337;
-	// int *ptr1 = &a;
-	// int *ptr2 = &b;
-	// int *null_ptr = NULL;
-	// ft_printf("Mine: %p\n", ptr1);
-	// printf("Orig: %p\n\n", ptr1);
-	// ft_printf("Mine: %p\n", ptr2);
-	// printf("Orig: %p\n\n", ptr2);
-	// ft_printf("Mine: %p\n", null_ptr);
-	// printf("Orig: %p\n\n", null_ptr);
-	// ft_printf("Mine: %-20p<end>\n", ptr1);
-	// printf("Orig: %-20p<end>\n\n", ptr1);
-	// printf("---- LONG STRING ----\n");
-	// char *longstr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-	// ft_printf("Mine: %s\n", longstr);
-	// printf("Orig: %s\n\n", longstr);
-	// printf("---- TEST %%s ----\n");
-	// ft_printf("Mine: %s\n", "Hola");
-	// printf("Orig: %s\n\n", "Hola");
-	// ft_printf("Mine: %s\n", "");
-	// printf("Orig: %s\n\n", "");
-	// ft_printf("Mine: %s\n", NULL);
-	// printf("Orig: %s\n\n", NULL);
-	// ft_printf("Mine: %.3s\n", "abcdef");
-	// printf("Orig: %.3s\n\n", "abcdef");
-	// ft_printf("Mine: %-10s<end>\n", "test");
-	// printf("Orig: %-10s<end>\n\n", "test");
-	printf("%050s", "Hola buenos dias");
+	// printf("%#20.10x\n", 5345);
+	// ft_printf("%#20.10x\n", 5345);
+	// ft_printf(" %s \n", "-");
+	// ft_printf(" %s %s \n", "", "-");
+	// ft_printf(" %s %s \n", " - ", "");
+	// ft_printf(" %s %s %s %s\n", " - ", "", "4", "");
+	// ft_printf(" %s %s %s %s %s \n", " - ", "", "4", "", "2 ");
+	// ft_printf(" NULL %s NULL \n", NULL);
+	printf("Orig: %p \n", -1);
+	ft_printf("Mine: %p \n", -1);
+	printf("Orig: %p \n", 1);
+	ft_printf("Mine: %p \n", 1);
+	printf("Orig: %p \n", 15);
+	ft_printf("Mine: %p \n", 15);
+	printf("Orig: %p \n", 16);
+	ft_printf("Mine: %p \n", 16);
+	printf("Orig: %p \n", 17);
+	ft_printf("Mine: %p \n", 17);
+	printf("Orig: %p %p \n", LONG_MIN, LONG_MAX);
+	ft_printf("Mine: %p %p \n", LONG_MIN, LONG_MAX);
+	printf("Orig: %p %p \n", INT_MIN, INT_MAX);
+	ft_printf("Mine: %p %p \n", INT_MIN, INT_MAX);
+	printf("Orig: %p %p \n", ULONG_MAX, -ULONG_MAX);
+	ft_printf("Mine: %p %p \n", ULONG_MAX, -ULONG_MAX);
 	return (0);
 }
