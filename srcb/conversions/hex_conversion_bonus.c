@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/31 23:34:01 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:10:35 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	len_hex(unsigned int nbr)
 {
 	int	i;
 
+	if (nbr == 0)
+		return (1);
 	i = 0;
 	while (nbr > 0)
 	{
@@ -55,25 +57,17 @@ static int	sum_prefix(unsigned int nbr, t_modifiers *mods)
 		return (0);
 }
 
-int	write_hex(int nbr, t_modifiers *mods, bool uppercase)
+int	write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase)
 {
-	char			sign;
-	unsigned int	u_nbr;
-	int				nbr_len;
+	int const		nbr_len = len_hex(nbr);
 	int				paddng;
 	int				precsn;
 
-	sign = manage_sign(nbr, &u_nbr, mods);
-	nbr_len = len_hex(u_nbr);
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
-	paddng = ft_maxnbr(0, mods->width - (nbr_len + (bool)sign + precsn
-				+ sum_prefix(u_nbr, mods)));
-	if (mods->zero && sign)
-		ft_putchar_fd(sign, 1);
+	paddng = ft_maxnbr(0, mods->width - (nbr_len + precsn
+				+ sum_prefix(nbr, mods)));
 	if (!mods->minus)
 		fill_width(paddng, mods->zero);
-	if (!mods->zero && sign)
-		ft_putchar_fd(sign, 1);
 	if (mods->hash && nbr != 0)
 		print_prefix(uppercase);
 	if (mods->precision)
@@ -84,5 +78,5 @@ int	write_hex(int nbr, t_modifiers *mods, bool uppercase)
 		print_hex(nbr, uppercase);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
-	return (nbr_len + (bool)sign + paddng + precsn);
+	return (nbr_len + paddng + precsn);
 }

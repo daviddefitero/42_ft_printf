@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/10/24 23:54:19 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/11/01 21:31:47 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ RED			:= \033[1;31m
 RESET		:= \033[0m
 
 # ********************************** RULES  ********************************** #
+all: ${NAME}
+
 ${NAME}: ${SRC} clean
 	@echo -e "${PURPLE}╔═════════════════════════════════════════════════════════════════════════╗"
 	@echo "║                             FT_PRINTF-TEST                              ║"
@@ -51,7 +53,17 @@ ${NAME}: ${SRC} clean
 	@echo "Process completed :)"
 	@echo ""
 
-all: ${NAME}
+bonus: ${SRC} clean
+	@echo -e "${PURPLE}╔═════════════════════════════════════════════════════════════════════════╗"
+	@echo "║                             FT_PRINTF-TEST                              ║"
+	@echo "║                              by dde-fite                                ║"
+	@echo -e "╚═════════════════════════════════════════════════════════════════════════╝${RESET}"
+	@echo -e "Compiling ft_Printf ...\n${GREEN}"
+	@${MAKE} -C ../ fclean bonus
+	@echo -e "${RESET}Compiling tester ...\n"
+	@${CC} ${CFLAGS} ${SRC} ../libftprintf.a
+	@echo "Process completed :)"
+	@echo ""
 
 clean:
 	@echo "Cleaning binary file (${NAME}) and cleaning ft_Printf ..."

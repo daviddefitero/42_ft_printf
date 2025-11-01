@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:13:08 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/01 21:53:51 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int				write_char(char c, t_modifiers *mods);
 int				write_int(int nbr, t_modifiers *mods);
 unsigned int	write_uint(unsigned int nbr, t_modifiers *mods);
 int				write_str(char *str, t_modifiers *mods);
-int				write_hex(int nbr, t_modifiers *mods, bool uppercase);
+int				write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase);
 int				write_ptr(void *ptr, t_modifiers *mods);
 
 int				get_int(va_list *args_ptr);
