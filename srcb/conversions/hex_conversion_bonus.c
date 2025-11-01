@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex_conversion.c                                   :+:      :+:    :+:   */
+/*   hex_conversion_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/10/31 23:34:01 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ int	write_hex(int nbr, t_modifiers *mods, bool uppercase)
 		print_prefix(uppercase);
 	if (mods->precision)
 		fill_char('0', precsn);
-	print_hex(nbr, uppercase);
+	if (nbr == 0)
+		ft_putchar_fd('0', 1);
+	else
+		print_hex(nbr, uppercase);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
 	return (nbr_len + (bool)sign + paddng + precsn);

@@ -4,3 +4,4 @@ build/
 *.out
 tests/printf_test
 .python-version
+.bonus
