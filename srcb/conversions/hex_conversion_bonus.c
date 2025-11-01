@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/01 22:10:35 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/01 23:15:59 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,5 @@ int	write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase)
 		print_hex(nbr, uppercase);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
-	return (nbr_len + paddng + precsn);
+	return (nbr_len + paddng + precsn + sum_prefix(nbr, mods));
 }

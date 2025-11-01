@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 00:28:49 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/31 23:37:23 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/01 23:06:20 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	write_ptr(void *ptr, t_modifiers *mods)
 	if (ptr == NULL)
 		return (null_management(mods));
 	nbr_len = len_hex_ptr((uintptr_t)ptr);
-	precsn = ft_strlen("0x") * sizeof(void *);
-	paddng = ft_maxnbr(0, mods->width - (nbr_len + 2 + precsn));
+	precsn = ft_maxnbr(0, mods->precision - nbr_len - 2);
+	paddng = ft_maxnbr(0, mods->width - (nbr_len + precsn));
 	if (!mods->minus)
 		fill_width(paddng, mods->zero);
 	ft_putstr_fd("0x", 1);
@@ -68,5 +68,5 @@ int	write_ptr(void *ptr, t_modifiers *mods)
 	print_hex_ptr((uintptr_t)ptr);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
-	return (nbr_len + 2 + paddng + precsn);
+	return (nbr_len + paddng + precsn);
 }
