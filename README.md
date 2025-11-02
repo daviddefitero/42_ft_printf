@@ -3,9 +3,30 @@
 	<h1 align="center">42_ft_printf</h1>
 </p>
 
+<p align="center">
+	<img alt="moulinette passing" src="https://img.shields.io/badge/moulinette-passing-gree">
+	<img alt="francinette passing" src="https://img.shields.io/badge/francinette-passing-gree">
+    <img alt="Static Badge" src="https://img.shields.io/badge/pending result-yellow?logo=42&logoColor=white">
+</p>
+
+<p align="center">
+This work is published under the terms of <a href="LICENSE"><b>MIT license</b></a>
+</p>
+
 <div align="center">
+    <h2>A printf replica</h2>
+</div>
+
+<div align="center">
+	<img height="500" src="media/ft_printf_bonus.png">
 	<img height="500" src="media/make.png">
 </div>
+
+## Features
+- Implements all basic `printf` conversions.
+- Fully supports all bonus features:
+  - Complete handling of flags: `-`, `0`, `.`, field width, `#`, `+`, and space.
+  - All possible flag combinations for each conversion.
 
 ## Requirements
 The functions and Makefile are designed for use in a UNIX-like environment; any use outside this scope does not guarantee correct or efficient operation.
@@ -38,6 +59,9 @@ You can include the library by including libft.h and libft.a as in the example:
 - First include the header file in your C or header files.
 ``` h
 #include "ft_printf.h"
+
+// or for bonus
+#include "ft_printf_bonus.h"
 ```
 
 - Then compile using the library
