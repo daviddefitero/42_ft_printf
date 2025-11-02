@@ -6,7 +6,7 @@
 #    By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 21:44:11 by dde-fite          #+#    #+#              #
-#    Updated: 2025/11/01 19:17:25 by dde-fite         ###   ########.fr        #
+#    Updated: 2025/11/02 19:41:45 by dde-fite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ SHELL := /bin/bash
 
 # FILES
 NAME			= libftprintf.a
-SRC_FILES		= core/ft_printf.c core/interruption_writers.c \
+SRC_FILES		= ft_printf.c writers_switch.c \
 				utils/variadic_getter.c \
 				conversions/int_conversion.c conversions/char_conversion.c conversions/uint_conversion.c conversions/str_conversion.c conversions/hex_conversion.c conversions/ptr_conversion.c
 
-SRCB_FILES		:= core/ft_printf_bonus.c core/argument_getters_bonus.c core/interruption_writers_bonus.c \
+SRCB_FILES		:= ft_printf_bonus.c argument_getters_bonus.c writers_switch_bonus.c \
 				utils/printing_helpers_bonus.c utils/variadic_getter_bonus.c utils/number_helpers_bonus.c \
 				conversions/int_conversion_bonus.c conversions/char_conversion_bonus.c conversions/uint_conversion_bonus.c conversions/str_conversion_bonus.c conversions/hex_conversion_bonus.c conversions/ptr_conversion_bonus.c
 SRC_FOLDER		= src
