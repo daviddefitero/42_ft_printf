@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/02 21:43:10 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 21:55:08 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int	write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase)
 	int				paddng;
 	int				precsn;
 
-	nbr_len = 0;
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
-		nbr_len = len_hex(nbr);
+	nbr_len = len_hex(nbr);
+	if (mods->is_precision && mods->precision == 0 && nbr == 0)
+		nbr_len = 0;
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
 	paddng = ft_maxnbr(0, mods->width - (nbr_len + precsn
 				+ sum_prefix(nbr, mods)));
@@ -74,7 +74,7 @@ int	write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase)
 	if (mods->hash && nbr != 0)
 		print_prefix(uppercase);
 	fill_char('0', precsn);
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
+	if (!(mods->is_precision && mods->precision == 0 && nbr == 0))
 	{
 		if (nbr != 0)
 			print_hex(nbr, uppercase);

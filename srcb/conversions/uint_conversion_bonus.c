@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/02 21:24:05 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 21:53:30 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_number(unsigned int nbr, t_modifiers *mods)
 {
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
+	if (!(mods->is_precision && mods->precision == 0 && nbr == 0))
 	{
 		if (nbr >= INT_MAX)
 		{
@@ -32,10 +32,10 @@ unsigned int	write_uint(unsigned int nbr, t_modifiers *mods)
 	int				paddng;
 	int				precsn;
 
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
-		nbr_len = ft_nbrlen(nbr);
-	else
+	if (mods->is_precision && mods->precision == 0 && nbr == 0)
 		nbr_len = 0;
+	else
+		nbr_len = ft_nbrlen(nbr);
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
 	paddng = ft_maxnbr(0, mods->width - (nbr_len + precsn));
 	if (!mods->minus)

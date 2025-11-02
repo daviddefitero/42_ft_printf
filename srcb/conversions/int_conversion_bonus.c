@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/02 21:23:56 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 21:52:56 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_number(unsigned int nbr, t_modifiers *mods)
 {
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
+	if (!(mods->is_precision && mods->precision == 0 && nbr == 0))
 	{
 		if (nbr == (unsigned int)INT_MIN)
 		{
@@ -35,11 +35,10 @@ int	write_int(int nbr, t_modifiers *mods)
 	int				precsn;
 
 	sign = manage_sign(nbr, &u_nbr, mods);
-	nbr_len = ft_nbrlen(u_nbr);
-	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
-		nbr_len = ft_nbrlen(u_nbr);
-	else
+	if (mods->is_precision && mods->precision == 0 && u_nbr == 0)
 		nbr_len = 0;
+	else
+		nbr_len = ft_nbrlen(u_nbr);
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
 	paddng = ft_maxnbr(0, mods->width - (nbr_len + (bool)sign + precsn));
 	if (mods->zero && sign)
