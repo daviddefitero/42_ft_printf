@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   uint_conversion.c                                  :+:      :+:    :+:   */
+/*   uint_conversion_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/30 18:05:02 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 21:24:05 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-static void	print_number(unsigned int nbr, bool int_max_overflow)
+static void	print_number(unsigned int nbr, t_modifiers *mods)
 {
-	if (int_max_overflow)
+	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
 	{
-		ft_putnbr_fd(nbr / 10, 1);
-		ft_putnbr_fd(nbr % 10, 1);
+		if (nbr >= INT_MAX)
+		{
+			ft_putnbr_fd(nbr / 10, 1);
+			ft_putnbr_fd(nbr % 10, 1);
+		}
+		else
+			ft_putnbr_fd(nbr, 1);
 	}
-	else
-		ft_putnbr_fd(nbr, 1);
 }
 
 unsigned int	write_uint(unsigned int nbr, t_modifiers *mods)
 {
-	int const		nbr_len = ft_nbrlen(nbr);
+	int				nbr_len;
 	int				paddng;
 	int				precsn;
-	bool			int_max_overflow;
 
-	if (nbr >= INT_MAX)
-		int_max_overflow = true;
+	if (!mods->is_precision || (mods->is_precision && mods->precision > 0))
+		nbr_len = ft_nbrlen(nbr);
 	else
-		int_max_overflow = false;
+		nbr_len = 0;
 	precsn = ft_maxnbr(0, mods->precision - nbr_len);
 	paddng = ft_maxnbr(0, mods->width - (nbr_len + precsn));
 	if (!mods->minus)
 		fill_width(paddng, mods->zero);
-	if (mods->precision)
-		fill_char('0', precsn);
-	print_number(nbr, int_max_overflow);
+	fill_char('0', precsn);
+	print_number(nbr, mods);
 	if (mods->minus)
 		fill_width(paddng, mods->zero);
 	return (nbr_len + paddng + precsn);
