@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/01 21:53:55 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 22:19:30 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int				write_str(char *str);
 int				write_hex(unsigned int nbr, bool uppercase);
 int				write_ptr(void *ptr);
 
+/* **************************** VARIADIC GETTERS **************************** */
 int				get_int(va_list *args_ptr);
 unsigned int	get_uint(va_list *args_ptr);
 char			get_char(va_list *args_ptr);

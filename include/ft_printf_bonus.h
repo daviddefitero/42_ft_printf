@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:48:15 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/02 22:15:49 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 22:20:04 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,17 @@ int				write_str(char *str, t_modifiers *mods);
 int				write_hex(unsigned int nbr, t_modifiers *mods, bool uppercase);
 int				write_ptr(void *ptr, t_modifiers *mods);
 
+/* ********************************  UTILS ********************************* */
+
+void			fill_width(unsigned int pd, bool zeroes);
+void			fill_char(char c, unsigned int nbr);
+char			manage_sign(int nbr, unsigned int *u_nbr, t_modifiers *mods);
+
+/* **************************** VARIADIC GETTERS **************************** */
 int				get_int(va_list *args_ptr);
 unsigned int	get_uint(va_list *args_ptr);
 char			get_char(va_list *args_ptr);
 char			*get_str(va_list *args_ptr);
 void			*get_ptr(va_list *args_ptr);
-
-/* ********************************  UTILS ********************************* */
-void			fill_width(unsigned int pd, bool zeroes);
-void			fill_char(char c, unsigned int nbr);
-char			manage_sign(int nbr, unsigned int *u_nbr, t_modifiers *mods);
 
 #endif
