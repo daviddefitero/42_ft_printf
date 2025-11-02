@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 23:37:52 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/11/02 21:15:38 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/02 22:16:40 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ static int	null_management(t_modifiers *mods)
 	int	paddng;
 
 	null_len = ft_strlen("(null)");
-	if (!mods->is_precision || (mods->is_precision && mods->precision >= null_len))
+	if (!mods->is_precision || (mods->is_precision
+			&& mods->precision >= null_len))
 		paddng = ft_maxnbr(0, mods->width - null_len);
 	else
 		paddng = mods->width;
 	if (!mods->minus)
 		fill_width(paddng, false);
-	if (!mods->is_precision || (mods->is_precision && mods->precision >= null_len))
+	if (!mods->is_precision || (mods->is_precision
+			&& mods->precision >= null_len))
 		ft_putstr_fd("(null)", 1);
 	else
 		null_len = 0;
