@@ -6,7 +6,7 @@
 /*   By: dde-fite <dde-fite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:01 by dde-fite          #+#    #+#             */
-/*   Updated: 2025/10/31 23:48:02 by dde-fite         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:05:33 by dde-fite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	ft_printf(char const *str, ...)
 	va_list		args;
 	int			chrs_count;
 
+	if (!str)
+		return (0);
 	chrs_count = 0;
 	va_start(args, str);
 	while (*str)
