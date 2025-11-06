@@ -6,7 +6,7 @@
 <p align="center">
 	<img alt="moulinette passing" src="https://img.shields.io/badge/moulinette-passing-gree">
 	<img alt="francinette passing" src="https://img.shields.io/badge/francinette-passing-gree">
-    <img alt="Static Badge" src="https://img.shields.io/badge/pending result-yellow?logo=42&logoColor=white">
+    <img alt="Static Badge" src="https://img.shields.io/badge/125/100-g?logo=42&logoColor=white">
 </p>
 
 <p align="center">
